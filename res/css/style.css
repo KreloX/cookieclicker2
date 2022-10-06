@@ -1,0 +1,16 @@
+body {
+  text-align: center;
+  background-color: bisque;
+}
+#main {
+  margin-top: 100px;
+}
+#cookie {
+  width: 400px;
+}
+#counter {
+  font-size: 36pt;
+}
+p {
+  font-size: 24pt;
+}
