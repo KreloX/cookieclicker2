@@ -11,9 +11,18 @@ let cost = 100;
 let clickerCost = 25;
 let perSecond = 0;
 
+let scaled = false;
+
 cookie.onclick = () => {
   cookieCount += bonus;
   counter.innerHTML = `Cookies: ${cookieCount}`;
+  if (scaled) {
+    cookie.style.scale = 1;
+    scaled = false;
+  } else {
+    cookie.style.scale = 1.1;
+    scaled = true;
+  }
 };
 
 upgrade.onclick = () => {
@@ -33,7 +42,14 @@ clicker.onclick = () => {
       setInterval(() => {
         cookieCount += perSecond;
         counter.innerHTML = `Cookies: ${cookieCount}`;
-      }, 1000);
+        if (scaled) {
+          cookie.style.scale = 1;
+          scaled = false;
+        } else {
+          cookie.style.scale = 1.1;
+          scaled = true;
+        }
+      }, 1000 - perSecond);
     }
     cookieCount -= clickerCost;
     perSecond++;
